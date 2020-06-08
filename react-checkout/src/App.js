@@ -12,15 +12,17 @@ function Footer(props) {
 
 function App() {
   const Items = [
-    { item: "A", UnitPrice: 50 },
-    { item: "B", UnitPrice: 30 },
-    { item: "C", UnitPrice: 20 },
-    { item: "D", UnitPrice: 15 }
+    { itemName: "A", UnitPrice: 50 },
+    { itemName: "B", UnitPrice: 30 },
+    { itemName: "C", UnitPrice: 20 },
+    { itemName: "D", UnitPrice: 15 }
   ];
+  const ItemsList = Items.map(item => <li>{item.itemName}</li>);
 
   return (
     <div className="App">
       <Header></Header>
+      <ul id="items">{ItemsList}</ul>
       <Footer></Footer>
     </div>
   );
