@@ -13,11 +13,18 @@ function Footer(props) {
 function App(props) {
   const items = props.items;
   const [cart, setCart] = useState([]);
+  //Sets the items as a list of buttons for good functionality to add to your shopping basket
+  const ItemsList = Object.keys(items).map(itemName => (
+    <li key={itemName}>
+      <button>{itemName}</button>
+    </li>
+  ));
 
   return (
     <div className="App">
       <Header></Header>
-      <Footer></Footer>
+      <ul id="items">{ItemsList}</ul>
+      <Footer cart={cart} items={items}></Footer>
     </div>
   );
 }
