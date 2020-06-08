@@ -7,7 +7,12 @@ function Header(props) {
 }
 
 function Footer(props) {
-  return <h2>Footer</h2>;
+  return (
+    <div>
+      <h2>Items: </h2>
+      <h2>Price: </h2>
+    </div>
+  );
 }
 
 function App(props) {
