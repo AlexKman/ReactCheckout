@@ -16,7 +16,7 @@ function App(props) {
   //Sets the items as a list of buttons for good functionality to add to your shopping basket
   const ItemsList = Object.keys(items).map(itemName => (
     <li key={itemName}>
-      <button>{itemName}</button>
+      <button onClick={() => setCart([...cart, itemName])}>{itemName}</button>
     </li>
   ));
 
