@@ -17,7 +17,7 @@ function App() {
     { itemName: "C", UnitPrice: 20 },
     { itemName: "D", UnitPrice: 15 }
   ];
-  const ItemsList = Items.map(item => <li>{item.itemName}</li>);
+  const ItemsList = Items.map(item => <li id="item">{item.itemName}</li>);
 
   return (
     <div className="App">
