@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import "../src/footer.css";
 
@@ -10,19 +10,13 @@ function Footer(props) {
   return <h2>Footer</h2>;
 }
 
-function App() {
-  const Items = [
-    { itemName: "A", UnitPrice: 50 },
-    { itemName: "B", UnitPrice: 30 },
-    { itemName: "C", UnitPrice: 20 },
-    { itemName: "D", UnitPrice: 15 }
-  ];
-  const ItemsList = Items.map(item => <li id="item">{item.itemName}</li>);
+function App(props) {
+  const items = props.items;
+  const [cart, setCart] = useState([]);
 
   return (
     <div className="App">
       <Header></Header>
-      <ul id="items">{ItemsList}</ul>
       <Footer></Footer>
     </div>
   );
