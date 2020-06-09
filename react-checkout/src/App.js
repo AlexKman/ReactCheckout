@@ -33,6 +33,9 @@ function Footer(props) {
       startingPrice += discountedPrice;
     }
   );
+  const totalPrice = cart.reduce((acc, curr) => {
+    return acc + props.items[curr].price;
+  }, startingPrice);
   return (
     <div>
       <h2>Items: </h2>
