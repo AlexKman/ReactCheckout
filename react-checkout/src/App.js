@@ -7,6 +7,32 @@ function Header(props) {
 }
 
 function Footer(props) {
+  //function to break down props taken from the shopping cart functionality which will return the accumulator(acc)
+  const counts = props.cart.reduce((acc, cv) => {
+    acc[cv] ? ++acc[cv] : (acc[cv] = 1);
+    return acc;
+  }, {});
+  const discountMap = {};
+
+  Object.entries(props.items).forEach(([itemName, { special }]) => {
+    if (special && counts[itemName] >= special[0]) {
+      const discounts = Math.floor(counts[itemName] / special[0]);
+      discountMap[itemName] = {
+        itemsDiscounted: discounts * special[0],
+        discountedPrice: special[1] * discounts
+      };
+    }
+  });
+
+  const cart = [...props.cart].sort();
+  let startingPrice = 0;
+  Object.entries(discountMap).forEach(
+    ([itemName, { itemsDiscounted, discountedPrice }]) => {
+      const index = cart.indexOf(itemName);
+      cart.splice(index, itemsDiscounted);
+      startingPrice += discountedPrice;
+    }
+  );
   return (
     <div>
       <h2>Items: </h2>
