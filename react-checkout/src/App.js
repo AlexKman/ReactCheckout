@@ -39,7 +39,7 @@ function Footer(props) {
   return (
     <div>
       <h2>Items: </h2>
-      <h2>Price: </h2>
+      <h2>Price: {totalPrice}</h2>
     </div>
   );
 }
