@@ -38,8 +38,13 @@ function Footer(props) {
   }, startingPrice);
   return (
     <div>
-      <h2>Items: </h2>
-      <h2>Price: {totalPrice}</h2>
+      <h2>
+        Items:{" "}
+        {Object.entries(counts)
+          .map(([itemName, count]) => `${itemName}: ${count}`)
+          .sort()}
+      </h2>
+      <h3>Price: {totalPrice}</h3>
     </div>
   );
 }
