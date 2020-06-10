@@ -1,0 +1,19 @@
+.footer td {
+  border: 1px solid black;
+  padding: 10px 30px;
+}
+
+.footer thead {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.footer table {
+  margin: 30px auto;
+}
+
+@media (min-width: 1024px) {
+  .footer table {
+    margin: 30px 0 0 30px;
+  }
+}
