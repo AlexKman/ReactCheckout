@@ -61,7 +61,9 @@ function Footer(props) {
               return 0;
             })}
           <tr>
-            <td colSpan="2">Total</td>
+            <td colSpan="2">
+              Total <p id="discount">(discounts applied)</p>
+            </td>
             <td>${totalPrice}</td>
           </tr>
         </tbody>
