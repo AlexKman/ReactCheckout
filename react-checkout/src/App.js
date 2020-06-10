@@ -52,7 +52,7 @@ function Footer(props) {
               <tr key={itemName}>
                 <td>{itemName}</td>
                 <td>{count}</td>
-                <td>${props.items[itemName].price * count}</td>{" "}
+                <td>£{(props.items[itemName].price * count) / 100}</td>{" "}
               </tr>
             ))
             .sort((a, b) => {
@@ -64,7 +64,7 @@ function Footer(props) {
             <td colSpan="2">
               Total <p id="discount">(discounts applied)</p>
             </td>
-            <td>${totalPrice}</td>
+            <td>£{totalPrice / 100}</td>
           </tr>
         </tbody>
       </table>
@@ -80,7 +80,7 @@ function App(props) {
     <li key={itemName} className="card">
       <header>
         <span>{itemName}</span>
-        <span className="price">${price}</span>
+        <span className="price">£{price / 100}</span>
       </header>
       <img src={src} alt={itemName} />
       <button className="button" onClick={() => setCart([...cart, itemName])}>
