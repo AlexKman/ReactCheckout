@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import "../src/footer.css";
+import "./footer.css";
 import "./items.css";
 
 function Header(props) {
@@ -37,16 +37,35 @@ function Footer(props) {
   const totalPrice = cart.reduce((acc, curr) => {
     return acc + props.items[curr].price;
   }, startingPrice);
+
   return (
-    <div>
-      <h2>
-        Items:{" "}
-        {Object.entries(counts)
-          .map(([itemName, count]) => `${itemName}: ${count}`)
-          .sort()
-          .join(",")}
-      </h2>
-      <h3>Price: {totalPrice}</h3>
+    <div className="footer">
+      <table>
+        <thead>
+          <tr>
+            <td colSpan="3">Items</td>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(counts)
+            .map(([itemName, count]) => (
+              <tr key={itemName}>
+                <td>{itemName}</td>
+                <td>{count}</td>
+                <td>${props.items[itemName].price * count}</td>{" "}
+              </tr>
+            ))
+            .sort((a, b) => {
+              if (a.key < b.key) return -1;
+              if (a.key > b.key) return 1;
+              return 0;
+            })}
+          <tr>
+            <td colSpan="2">Total</td>
+            <td>${totalPrice}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
