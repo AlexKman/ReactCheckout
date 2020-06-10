@@ -10,4 +10,4 @@ To get your own local copy of the site running, fork and clone this repo into yo
 Once cloned, navigate to the repo folder in your terminal and run
 `npm install`.
 
-To run this program simply navigate to the react-checkout folder folder and run npm start which will then open in your default browser.
+To run this program simply navigate to the react-checkout folder and run npm start which will then open in your default browser.
