@@ -17,3 +17,14 @@
   justify-content: space-around;
   align-items: center;
 }
+.card img {
+  height: 120px;
+  margin: 20px 0;
+}
+.card button {
+  background: limegreen;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 0;
+}
