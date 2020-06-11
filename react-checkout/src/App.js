@@ -76,18 +76,20 @@ function App(props) {
   const items = props.items;
   const [cart, setCart] = useState([]);
   //Sets the items as a list of buttons for good functionality to add to your shopping basket
-  const ItemsList = Object.entries(items).map(([itemName, { src, price }]) => (
-    <li key={itemName} className="card">
-      <header>
-        <span>{itemName}</span>
-        <span className="price">£{price / 100}</span>
-      </header>
-      <img src={src} alt={itemName} />
-      <button className="button" onClick={() => setCart([...cart, itemName])}>
-        Add to Cart
-      </button>
-    </li>
-  ));
+  const ItemsList = Object.entries(items).map(
+    ([itemName, { src, price, special }]) => (
+      <li key={itemName} className="card">
+        <header id="header">
+          <span>{itemName}</span>
+          <span className="price">£{price / 100}</span>
+        </header>
+        <img src={src} alt={itemName} />
+        <button className="button" onClick={() => setCart([...cart, itemName])}>
+          Add to Cart
+        </button>
+      </li>
+    )
+  );
 
   return (
     <div className="App">
